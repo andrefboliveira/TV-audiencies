@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "rm(list=ls(all=TRUE))\n\n\naudiencias <-\n  read.table(file = \"./Data/audiencias.csv\",      # Ficheiro da fonte de dados\n             header = FALSE,          # Primeira linha tem dados\n             sep = \",\",               # Valores separados por vírgulas\n             dec = \".\",               # Separador decimal é um ponto\n             comment.char = \"\");      # Cada linha só tem dados\n\nespetadores <-\n  read.table(file = \"./Data/espetadores.csv\",      # Ficheiro da fonte de dados\n             header = FALSE,          # Primeira linha tem dados\n             sep = \",\",               # Valores separados por vírgulas\n             dec = \".\",               # Separador decimal é um ponto\n             comment.char = \"\");      # Cada linha só tem dados\n\nclasses <-\n  read.table(file = \"./Data/classes.tsv\",\n             header = TRUE,\n             sep = \"\\t\");\n\ntipologia <-\n  read.table(file = \"./Data/tipologia.tsv\",\n             header = TRUE,\n             sep = \"\\t\")",
+    "created" : 1488887967819.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "10313889",
+    "id" : "E3E2ABC6",
+    "lastKnownWriteTime" : 1488889853,
+    "last_content_update" : 1488889853965,
+    "path" : "C:/Users/andre/Google Drive/FCUL - MI/Ano 1/S2/Integração e Processamento Analítico de Informação/3. Projeto/IPAI/TV audiencies Project/Scripts/Main.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
