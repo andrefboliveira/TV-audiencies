@@ -121,3 +121,7 @@ espetadores_audiencias <- sqldf("SELECT * FROM espetadores, audiencias_original 
 # programa_tipo <- sqldf("SELECT * FROM pet_data_original, tipologia WHERE pet_data_original.Tipo == tipologia.Tipo");
 
 # -----------------------------------------------------------------------------
+
+# See viewers with same code and differente details:
+espetadores_details <- sqldf("SELECT DISTINCT espetadores.Codigo, espetadores.Sexo, espetadores.DonaDeCasa, espetadores.DonaDeCasa, espetadores.EscalaoEtario, espetadores.Classe FROM espetadores ORDER BY espetadores.Codigo");
+
