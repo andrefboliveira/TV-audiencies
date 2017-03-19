@@ -1,7 +1,14 @@
-#install.packages("sqldf");
+# -----------------------------------------------------------------------------
+# Integração e Processamento Analítico de Informação
+#
+#   André Oliveira - 45648
+#   Jacek
+#   Tomás
+#
+# TV audiences project - Load data to R
+# -----------------------------------------------------------------------------
+
 library(tools)
-library("sqldf");
-#library("lattice");
 
 rm(list=ls(all=TRUE))
 
@@ -63,6 +70,7 @@ names(tipologia) <- c("Tipo", "Designacao")
 
 
 
+
 # Mudar para a pasta com os ficheiros PET.
 setwd("./pet-1s96");
 
@@ -106,26 +114,20 @@ rownames(todos.dados.pet) <- 1:nrow(todos.dados.pet);
 
 # Aqui devem ser tornados mais inteligíveis os nomes dos campos de dados,
 # conforme descrição no enunciado do projeto.
+names(todos.dados.pet) <- c("Canal", "HoraInicio", "Duracao", "Zero", "Nome1", "Nome2", "Classificacao", "Tipo", "ParteTodo", "Data")
 todos.dados.pet_original <- todos.dados.pet
 
-names(todos.dados.pet) <- c("Canal", "HoraInicio", "Duracao", "Zero", "Nome1", "Nome2", "Classificacao", "Tipo", "ParteTodo", "Data")
 todos.dados.pet$Canal <- factor(todos.dados.pet$Canal);
 todos.dados.pet$ParteTodo <- factor(todos.dados.pet$ParteTodo);
-#todos.dados.pet$HoraInicio <- format(strptime(sprintf("%06.0f", todos.dados.pet$HoraInicio), format="%H%M%S"), format="%H:%M:%S")
-hora <- sprintf("%06.0f", todos.dados.pet$HoraInicio);
+todos.dados.pet$HoraInicio <- format(strptime(sprintf("%06.0f", todos.dados.pet$HoraInicio), format="%H%M%S"), format="%H:%M:%S")
 
-todos.dados.pet$HoraInicio <- strptime(paste(todos.dados.pet$Data, hora), format="%Y-%m-%d %H%M%S")
-#### VERIFICAR
+# Alternative. to show full date:
+# hora <- sprintf("%06.0f", todos.dados.pet$HoraInicio);
+# todos.dados.pet$HoraInicio <- strptime(paste(todos.dados.pet$Data, hora), format="%Y-%m-%d %H%M%S")
 
 
 # Mudar para a pasta original.
 setwd("..");
+setwd("..");
 
-setwd("..")
-
-# Pesquisa de linhas com dados sobre o canal 1 usando uma interrogação SQL.
-dados <- sqldf("SELECT * FROM audiencias_original");
-
-sqldf("SELECT * FROM audiencias_original AS a, espetadores AS e WHERE a.ID == e.ID")
-
-full_table <- sqldf("SELECT * FROM espetadores_original AS e, tipologia AS t, audiencias_original AS a, classes AS c, todos.dados.pet_original AS pet WHERE a.ID == e.ID")
+# -----------------------------------------------------------------------------
