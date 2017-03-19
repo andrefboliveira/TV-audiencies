@@ -21,7 +21,6 @@ summary(espetadores);
 summary(classes);
 summary(tipologia);
 summary(todos.dados.pet);
-summary(espetadores);
 
 
 # -----------------------------------------------------------------------------
@@ -114,11 +113,11 @@ pet_data_original.sort.Data <- sqldf("SELECT * FROM pet_data_original ORDER BY D
 # -----------------------------------------------------------------------------
 
 # See data connections:
-pet_data <- todos.dados.pet;
+pet_data_original <- todos.dados.pet_original;
 
 espetadores_classes <- sqldf("SELECT * FROM espetadores, classes WHERE espetadores.Classe == classes.Classe");
 espetadores_audiencias <- sqldf("SELECT * FROM espetadores, audiencias_original WHERE espetadores.ID == audiencias_original.ID");
-audiencias_programa <- sqldf("SELECT * FROM audiencias_original, pet_data  WHERE audiencias_original.Canal == pet_data.Canal");
-programa_tipo <- sqldf("SELECT * FROM pet_data, tipologia WHERE pet_data.Tipo == tipologia.Tipo");
+# audiencias_programa <- sqldf("SELECT * FROM audiencias_original, pet_data_original  WHERE audiencias_original.Canal == pet_data_original.Canal");
+# programa_tipo <- sqldf("SELECT * FROM pet_data_original, tipologia WHERE pet_data_original.Tipo == tipologia.Tipo");
 
 # -----------------------------------------------------------------------------
