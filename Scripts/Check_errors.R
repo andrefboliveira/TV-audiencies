@@ -2,8 +2,8 @@
 # Integração e Processamento Analítico de Informação
 #
 #   André Oliveira - 45648
-#   Jacek
-#   Tomás
+#   Jacek Żyła - 49122
+#   Tomás Peixinho - 43256
 #
 # TV audiences project - Check for errors in the data sources
 # -----------------------------------------------------------------------------
