@@ -9,7 +9,12 @@
 # 	Importar dados
 # -----------------------------------------------------------------------------
 
+# install.packages("dplyr")
+# install.packages("tidyr")
+
 library(tools)
+library(dplyr)
+library(tidyr)
 
 # Limpar ambiente
 rm(list=ls(all=TRUE))
@@ -42,13 +47,20 @@ audiencias <- audiencias_original
 # antes e depois das datas.
 audiencias$Data <- as.Date(audiencias$Data, "#%Y-%m-%d#");
 audiencias$Canal <- factor(audiencias$Canal);
-audiencias$HoraInicio <- strptime(audiencias$HoraInicio, format="#%Y-%m-%d  %H:%M:%S#")
-audiencias$HoraFim <- strptime(audiencias$HoraFim, format="#%Y-%m-%d  %H:%M:%S#")
+
+
+# audiencias$HoraInicio <-  strptime(audiencias$HoraInicio, format=#%Y-%m-%d %H:%M:%S#")
+# audiencias$DataFim <-  strptime(audiencias$DataFim, format="#%Y-%m-%d %H:%M:%S#")
+
 
 # Alteração do tipo da variável canal, de contínua para discreta. Apesar de 
 # guardar apenas valores numéricos, eles representam identificadores de canais.
 audiencias$ID <- factor(audiencias$ID);
 
+
+audiencias_new <- audiencias[,  !(colnames(audiencias) %in% c("DataInicio", "HoraInicio", "DataFim", "HoraFim"))]
+audiencias_new$DataHoraInicio <- strptime(paste(audiencias$DataInicio, audiencias$HoraInicio), format="%Y-%m-%d  %H:%M:%S")
+audiencias_new$DataHoraFim <- strptime(paste(audiencias$DataFim, audiencias$HoraFim), format="%Y-%m-%d  %H:%M:%S")
 
 
 # -----------------------------------------------------------------------------
@@ -180,3 +192,5 @@ write.table(todos.dados.pet,
 setwd("..");
 
 # -----------------------------------------------------------------------------
+
+
