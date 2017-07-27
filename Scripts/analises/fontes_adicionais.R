@@ -7,6 +7,7 @@
 #
 # Projecto Audiências Televisivas
 # 	Importar fontes adicionais
+#	Já não é usado.
 # -----------------------------------------------------------------------------
 
 rm(list=ls(all=TRUE))

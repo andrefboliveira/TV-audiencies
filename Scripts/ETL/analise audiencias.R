@@ -103,9 +103,12 @@ factos$DataFim <- as.numeric(factos$DataFim);
 factos$HoraFim <- gsub(":", "", factos$HoraFim)
 factos$HoraFim <- as.numeric(factos$HoraFim);
 
+
 factos <- factos[, !(colnames(factos) %in% c("Canal", "EspetadorInicio", "EspetadorFim", "Duracao" , "PCanal", "ProgramaInicio", "ProgramaFim", "DataFim", "HoraFim"))]
 
-names(factos) <- c("Espetador", "Programa", "Data Início", "Hora Início", "Duração");
+factos$dur_min <- floor(factos$Dur / 60);
+
+names(factos) <- c("Espetador", "Programa", "Data Início", "Hora Início", "Duração Segundos", "Duração Minutos");
 
 write.table(factos,
             file = "./Dimensoes/factosAudiencias.tsv",

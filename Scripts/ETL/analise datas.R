@@ -19,7 +19,8 @@ data <-
   read.table(file = "./data.tsv",
              header = TRUE,
              sep = "\t");
-names(data) <- c("Chave Data", "Data Completa", "Ano", "Mês", "Dia", "Nome do Mês", "Semana do Ano", "Dia da Semana", "Fim de Semana", "Indicador Feriado", "Indicador Data Comemorativa", "Nome da Data Comemorativa")
+# names(data) <- c("Chave Data", "Data Completa", "Ano", "Mês", "Dia", "Nome do Mês", "Semana do Ano", "Dia da Semana", "Fim de Semana", "Indicador Feriado", "Indicador Data Comemorativa", "Nome da Data Comemorativa")
+names(data) <- c("Chave Data", "Data Completa", "Ano", "Mês", "Dia", "Nome do Mês", "Semana do Ano", "Nome do Dia da Semana", "Número do Dia da Semana", "Fim de Semana", "Indicador Feriado", "Indicador Data Comemorativa", "Nome da Data Comemorativa", "Dia da Semana")
 data$`Data Completa` <-  as.Date(data$`Data Completa`, "%Y-%m-%d");
 
 horario <-
