@@ -1,5 +1,5 @@
 # TV-audiencies
-Pair project titled "TV audiencies" for the course "Integração e Processamento Analítico de Informação" (Information Integration and Analytic Data Processing) for the school year 2016/2017 of the Master's degree in Informatics (Mestrado em Informática) at FCUL/ULisboa
+Pair project titled "TV audiencies" for the course "Integração e Processamento Analítico de Informação" (Data Mining and Knowledge Discovery) for the school year 2016/2017 of the Master's degree in Informatics (Mestrado em Informática) at FCUL/ULisboa
 
 ## Project Stack
 R,  Microsoft SQL Server (Integration Services, Analysis Services), Microsoft Power B
